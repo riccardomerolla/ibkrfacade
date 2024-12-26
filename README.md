@@ -86,3 +86,13 @@ Since you have hands-on market data, with the methods of `OrderManagerService`, 
 You can find an example implementation in the `strategy` package, which periodically checks the prices of Apple stock from Redis looking for a trading signal. Once the trade performed (you have an open position) it checks the price movements for a possible exit.
 
 **Important: This is not a real strategy. Don't even think about using it real conditions!**
+
+### Docker
+Package your application using Maven:  
+- mvn clean package
+
+Build the Docker image:  
+- mvn dockerfile:build
+
+Run the Docker container:  
+- docker run -p 8082:8082 your-dockerhub-username/ibkrfacade:1.0-SNAPSHOT
